@@ -9,7 +9,7 @@
     <div class="six columns">
       <img src="http://lorempixel.com/600/600/food/<?php echo rand(1,10);?>" />
       <h4>What?</h4>
-      <p>UPlan is another way to get your trip organized <i>uplan</i>, which is defined as your plan, meaning your own travel planner.</p>
+      <p>UPlan is another way to get your trip organized. <i>Uplan</i>, which is defined as you plan, means your own travel planner.</p>
     </div>
     
     <div class="six columns">

@@ -14,12 +14,13 @@ if( $conn === false )
 }
 
 	
+//Then we retrieve the posted values for user and password.
 $user = $_POST['user'];
 $pass = $_POST['pass'];
 
 if ($user == null || $pass == null){
   echo '<script language="javascript">confirm("Please fill out all fields!!")</script>';
-  echo '<script language="javascript">window.location = "login.php"</script>';
+  echo '<script language="javascript">window.location = "signup.php"</script>';
   exit;
 }
 
@@ -27,7 +28,7 @@ $hashuser = sha1($user);
 $hash = $user . $pass;
 $hashpass = sha1($hash);
 
-$sp = "{call Check_admin_users( ?,?)}";
+$sp = "{call Check_regular_users( ?,?)}";
 
 	// Bind the parameters
 	$params = array(
@@ -52,14 +53,18 @@ while( $row = sqlsrv_fetch_object( $result))
 if ($count > 0) {
 	 //If user and pass match any of the defined users
 	 $_SESSION['loggedin'] = 1;
-	 $_POST['hashuser'];
-	 header("Location: admin.php?user=". $hashuser);
+	 $_SESSION['user'] = $user;
+	 header("Location: index.php?user=". $hashuser);
 };
  
 //If the session variable is not true, exit to exit page.
 if($count === 0){
-	$_SESSION['loggedin'] = 0;
-    header("Location: login.php");
-    exit;
+	 $_SESSION['loggedin'] = 0;
+ 	 $_SESSION['user'] = null;
+	echo '<script language="javascript">confirm("Wrong username and password!")</script>';
+	echo '<script language="javascript">window.location = "user.php"</script>';
+	exit;
 };
+
+
 ?>

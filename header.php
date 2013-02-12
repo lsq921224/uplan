@@ -1,7 +1,6 @@
 <html>
 <head>
-<link rel="shortcut icon" href="../../images/fav/favicon.ico" >
-   <link rel="icon" type="image/gif" href="../../images/fav/animated_favicon1.gif" > 
+  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
    <!-- Included CSS Files (Uncompressed) -->
   <!--
   <link rel="stylesheet" href="stylesheets/foundation.css">
@@ -18,7 +17,8 @@
     </div>
     <div class="nine columns">
       <ul class="nav-bar right">
-          <li><a href="login.php">Log in</a></li>
+           <li><a href="user.php">Log In/Sign Up</a></li>
+           <li><a href="login.php">Hotel Admin</a></li>
 			<li><a href="about.php">About</a></li>
 			<li><a href="careers.php">Career</a></li>
 			<li><a href="contact_us.php">Contact us</a></li>
